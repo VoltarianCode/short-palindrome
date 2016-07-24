@@ -5,6 +5,18 @@ import java.util.*;
  * Created by Illya on 16-07-24.
  */
 public class Solution {
+    /*public static int findPairs(int i, int j, char[] array, int length){
+        int count = 0;
+        for (int k = i; k < j - 1; k++ ){
+            for (int m = j; m > k+1; m--){
+                if (array[k] == array[m]){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    */
     public static void main(String[] args) {
         Scanner in = null;
         try {
@@ -22,11 +34,14 @@ public class Solution {
             return;
         }
         for (int i = 0; i < length-3; i++){
-            for (int j = i+1; j <length-2; j++){
-                for (int k = j+1; k<length-1; k++){
-                    for (int m = k + 1; m < length; m++){
-                        if(array[i]==array[m] && array[j] == array[k]){
-                            count++;
+            for (int j = length-1; j > i+2; j--){
+                if (array[i] == array[j]){
+                    //count+=findPairs(i, j, array, length);
+                    for (int k = i + 1; k < j ; k++ ){
+                        for (int m = j - 1; m > k; m--){
+                            if (array[k] == array[m]){
+                                count++;
+                            }
                         }
                     }
                 }
