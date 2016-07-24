@@ -14,6 +14,26 @@ public class Solution {
         }
 
         String s = in.nextLine();
-        System.out.println(s);
+        int length = s.length();
+        int count = 0;
+        char array[] = s.toCharArray();
+        int a, b, c ,d;
+        if (length < 4){
+            System.out.println("0");
+            return;
+        }
+        for (int i = 0; i < length-3; i++){
+            for (int j = i+1; j <length-2; j++){
+                for (int k = j+1; k<length-1; k++){
+                    for (int m = k + 1; m < length; m++){
+                        if(array[i]==array[m] && array[j] == array[k]){
+                            count++;
+                        }
+                    }
+                }
+            }
+
+        }
+        System.out.println(count%(1000000000 + 7));
     }
 }
