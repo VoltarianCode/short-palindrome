@@ -17,7 +17,6 @@ public class Solution {
         int length = s.length();
         int count = 0;
         char array[] = s.toCharArray();
-        int a, b, c ,d;
         if (length < 4){
             System.out.println("0");
             return;
